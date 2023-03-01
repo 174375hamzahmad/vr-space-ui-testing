@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+.required {
+  color: red;
+  margin-left: 3px;
+}
+
+.container-bg-color {
+  background-color: var(--background);
+  padding: 0% !important;
+  min-height: 100vh;
+}
+
+.form-color {
+  background-color: var(--card-body);
+}
+
+.custom-alignment {
+  display: flex;
+  gap: 30px;
+}
+.custom-alignment-suggestions {
+  display: flex;
+  gap: 20px;
+}

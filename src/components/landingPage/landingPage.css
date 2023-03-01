@@ -1,0 +1,99 @@
+/* navbar */
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+.navbar-custom {
+  background-color: var(--navbar);
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: var(--white);
+  font-weight: bold;
+}
+.navbar-custom .navbar-nav .nav-link {
+  color: var(--white);
+  font-size: small;
+}
+
+/* dual buttons */
+.btn-primary-custom {
+  background-color: var(--text) !important;
+  border-color: var(--text) !important;
+  color: var(--white) !important;
+  border-top-left-radius: 50px !important;
+  border-bottom-left-radius: 50px !important;
+}
+
+.btn-secondary-custom {
+  background-color: var(--card-body) !important;
+  border-color: var(--card-body) !important;
+  color: var(--white) !important;
+  border-top-right-radius: 50px !important;
+  border-bottom-right-radius: 50px !important;
+}
+/* Card */
+.card {
+  overflow: hidden;
+  border-color: var(--card-body) !important;
+}
+.card-body {
+  background-color: var(--card-body);
+}
+.card-body .card-title {
+  color: var(--white);
+}
+.card-body .card-text {
+  color: var(--white);
+}
+
+/* whole container color */
+.container-bg-color {
+  background-color: var(--background);
+  padding: 0% !important;
+}
+
+.container .btn-success {
+  background-color: var(--buttons);
+  color: var(--buttons-text);
+  border-color: var(--buttons);
+  border-radius: 54px;
+  font-weight: 600;
+}
+.container-fluid .btn-success {
+  background-color: var(--buttons);
+  color: var(--buttons-text);
+  border-color: var(--buttons);
+  border-radius: 54px;
+  font-weight: 600;
+}
+
+/*carousel  */
+
+.white-text-carousel {
+  color: var(--white) !important;
+  font-weight: 400 !important;
+}
+.purple-text-carousel {
+  color: var(--text) !important;
+  font-weight: 800 !important;
+}
+
+/* social media handles */
+
+.container-height-color {
+  min-height: 350px;
+  background-color: var(--card-body);
+}
+
+.custom-h1-text {
+  padding-top: 30px;
+  color: var(--white);
+}
+
+/* Footer/ */
+
+.custom-footer {
+  padding-top: 50px;
+  color: var(--white);
+}
