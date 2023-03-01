@@ -6,7 +6,7 @@ function App() {
   useEffect(() => {}, []);
   return (
     <div>
-      <SignUp />
+      <LandingPage />
     </div>
   );
 }

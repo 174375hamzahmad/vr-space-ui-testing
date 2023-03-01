@@ -21,9 +21,9 @@ function SignInModal(props) {
     // handle manual sign in with email and password logic
   };
   const buttonStyle = {
-    backgroundColor: "#0d6efd",
-    borderColor: "#0d6efd",
-    color: "#FFFFFF",
+    backgroundColor: "var(--blue)",
+    borderColor: "var(--blue)",
+    color: "var(--white)",
     borderRadius: "20px",
     padding: "10px 20px",
     fontWeight: "bold",
