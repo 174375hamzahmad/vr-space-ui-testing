@@ -4,16 +4,23 @@ import blakePic from "../../images/blake.jpeg";
 import captainAmerica from "../../images/captAmerica.jpeg";
 import "./SignUp.css";
 import { BiFemale, BiMale } from "react-icons/bi";
+import { BsUpload } from "react-icons/bs";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function SignUp() {
-  const [profilePicture, setProfilePicture] = useState(profilePic);
-  //const [name, setName] = useState("");
+  const locationHistory = useLocation(); // get router history
+
+  const [profilePicture, setProfilePicture] = useState("");
+  const [email, setEmail] = useState(
+    locationHistory.state.signUpGoogleData.email
+  );
   const [selectedGender, setSelectedGender] = useState(null);
 
   const handleProfilePictureChange = (event) => {
     setProfilePicture(URL.createObjectURL(event.target.files[0]));
     console.log(profilePicture);
   };
+
   const updatePicture = (newPicture) => {
     setProfilePicture(newPicture);
   };
@@ -22,9 +29,10 @@ function SignUp() {
     setSelectedGender(gender);
     console.log(gender);
   };
-  // const handleNameChange = (event) => {
-  //   setName(event.target.value);
-  // };
+
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,7 +42,7 @@ function SignUp() {
     <div className="container-fluid container-bg-color">
       <div className="row">
         <div className="col-sm-12 text-center custom-h1-text">
-          <h1>VR-Space</h1>
+          <h1>Welcome to VR-Space</h1>
         </div>
       </div>
       <div className="row justify-content-center">
@@ -47,18 +55,26 @@ function SignUp() {
             <div className="col-sm-3">
               <label htmlFor="profile-picture-input">
                 <div
-                  className="rounded-circle overflow-hidden "
+                  className="rounded-circle overflow-hidden border "
                   style={{
                     width: "120px",
                     height: "120px",
                     marginTop: "20px",
+                    backgroundColor: "var(--white)",
+                    cursor: "pointer",
                   }}
                 >
-                  <img
-                    src={profilePicture}
-                    alt="pp"
-                    className="w-100 h-100 object-fit-cover"
-                  />
+                  {profilePicture ? (
+                    <img
+                      src={profilePicture}
+                      alt=""
+                      className="w-100 h-100 object-fit-cover"
+                    />
+                  ) : (
+                    <div className="d-flex justify-content-center align-items-center bg-light rounded-circle p-3 text-center">
+                      <BsUpload size={46} className="text-primary" />
+                    </div>
+                  )}
                 </div>
               </label>
               <input
@@ -109,15 +125,17 @@ function SignUp() {
                 htmlFor="name"
                 className="form-label"
               >
-                Enter Name:
+                Email:
                 <span className="required">*</span>
               </label>
               <input
                 style={{ width: "360px", height: "64px", borderRadius: "8px" }}
                 type="text"
                 className="form-control"
-                id="name"
+                id="email"
+                value={email}
                 placeholder="ahmad.hamza@systemsltd.com"
+                onChange={handleEmail}
               />
             </div>
             <div className="col-md-6">
@@ -138,11 +156,11 @@ function SignUp() {
               />
             </div>
           </div>
-          <div className="row mb-3">
+          <div className="row">
             <label style={{ color: "white" }}>
               Select your gender:<span className="required">*</span>
             </label>
-            <div className="d-flex">
+            <div className="d-flex mt-2">
               <div onClick={() => handleGenderClick("male")}>
                 <BiMale
                   color={selectedGender === "male" ? "#68A9C2" : "#D2D2D2"}

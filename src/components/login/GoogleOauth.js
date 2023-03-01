@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import jwt_decode from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 const GoogleOauth = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://accounts.google.com/gsi/client";
@@ -33,9 +35,16 @@ const GoogleOauth = () => {
       }
     };
 
-    const onCredentialResponse = (credential) => {
+    const onCredentialResponse = (res) => {
       // handle the credential response here
-      console.log(credential);
+      const data = jwt_decode(res.credential);
+      if (res.credential) {
+        navigate("/signUp", {
+          state: {
+            signUpGoogleData: data,
+          },
+        });
+      }
     };
 
     script.onload = onGsiLoad;
