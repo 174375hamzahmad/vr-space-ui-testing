@@ -87,7 +87,9 @@ function SignUp() {
             </div>
             <div className="col-sm-4">
               <div className="mb-3 mt-4">
-                <label style={{ color: "white" }}>Pick profile image</label>
+                <label style={{ color: "var(--white)" }}>
+                  Pick profile image
+                </label>
                 <div
                   className="custom-alignment-suggestions"
                   style={{ marginTop: "10px" }}
@@ -121,7 +123,7 @@ function SignUp() {
           <div className="row mb-3">
             <div className="col-md-6">
               <label
-                style={{ color: "white" }}
+                style={{ color: "var(--white)" }}
                 htmlFor="name"
                 className="form-label"
               >
@@ -140,7 +142,7 @@ function SignUp() {
             </div>
             <div className="col-md-6">
               <label
-                style={{ color: "white" }}
+                style={{ color: "var(--white)" }}
                 htmlFor="displayName"
                 className="form-label"
               >
@@ -166,14 +168,14 @@ function SignUp() {
                   color={selectedGender === "male" ? "#68A9C2" : "#D2D2D2"}
                   size={70}
                 />
-                <label style={{ color: "white" }}>Male</label>
+                <label style={{ color: "var(--white)" }}>Male</label>
               </div>
               <div onClick={() => handleGenderClick("female")}>
                 <BiFemale
                   color={selectedGender === "female" ? "pink" : "#D2D2D2"}
                   size={70}
                 />
-                <label style={{ color: "white" }}>Female</label>
+                <label style={{ color: "var(--white)" }}>Female</label>
               </div>
             </div>
           </div>
@@ -181,10 +183,10 @@ function SignUp() {
             <div className="col-md-12 text-end">
               <button
                 style={{
-                  backgroundColor: "#06EFB6",
-                  color: "#175855",
+                  backgroundColor: "var(--buttons)",
+                  color: "var(--text)",
                   borderRadius: "64px",
-                  borderColor: "#06EFB6",
+                  borderColor: "var(--buttons)",
                   fontWeight: "bold",
                   width: "130px",
                   height: "48px",
